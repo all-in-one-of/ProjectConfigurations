@@ -44,3 +44,7 @@ def getScriptPath():
     """
     scriptPath = getModulesPath(inspect.currentframe().f_back)
     return scriptPath
+
+
+def getDirPath():
+    return os.path.dirname(getScriptPath())

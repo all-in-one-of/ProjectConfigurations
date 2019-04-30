@@ -9,7 +9,7 @@ __author__ = 'ChenLiang.Miao'
 import scriptTool
 
 FILENAME = scriptTool.getFile(__file__)
-basePath = scriptTool.getScriptPath()
+basePath = scriptTool.getDirPath()
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 ProjectName = ""
 PipelineSoftware = ''
@@ -37,8 +37,10 @@ MAYAMenu = [{'General': {}},
             {'Lighting': {}},
             {'Help': {}}]
 
-MAYAPluginList = ['AbcExport.mll', 'AbcImport.mll', 'matrixNodes.mll', 'gpuCache.mll',
-                  'fbxmaya.mll', 'objExport.mll', 'cgfxShader.mll',
+MAYAPluginList = ['AbcExport.mll', 'AbcImport.mll', 'matrixNodes.mll', 'gpuCache.mll', 'SHAPESBrush.mll',
+                  'mtoa.mll','pgYetiMaya.mll', 'lookdevKit.mll', 'curveWarp.mll', 'modelingTookit.mll',
+                  'fbxmaya.mll', 'objExport.mll', 'cgfxShader.mll', 'dx11Shader.mll', 'dgProfiler.mll',
+                  'deformerEvaluator.mll', 'nearestPointOnMesh.mll',
                   'invertShape.mll', 'poseInterpolator.mll', 'projectConfiguration.py']
 
 MAYAToolVariables = {
