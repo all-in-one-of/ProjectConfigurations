@@ -5,7 +5,11 @@
 # File      : __init__.py
 __author__ = 'ChenLiang.Miao'
 # import --+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
-
-# function +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
+import os
+import sys
 
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
+dirname = os.path.dirname(__file__)
+sys.path.insert(0, dirname)
+
+os.environ['PATH'] += os.pathsep + dirname
