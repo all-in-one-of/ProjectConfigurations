@@ -9,7 +9,7 @@ __author__ = 'ChenLiang.Miao'
 import scriptTool
 
 FILENAME = scriptTool.getFile(__file__)
-basePath = scriptTool.getDirPath()
+basePath = scriptTool.getDirPath().replace('\\', '/')
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 ProjectName = ""
 PipelineSoftware = ''
@@ -40,7 +40,7 @@ MAYAMenu = [{'General': {}},
 MAYAPluginList = ['AbcExport.mll', 'AbcImport.mll', 'matrixNodes.mll', 'gpuCache.mll', 'SHAPESBrush.mll',
                   'mtoa.mll', 'pgYetiMaya.mll', 'lookdevKit.mll', 'curveWarp.mll', 'modelingTookit.mll',
                   'fbxmaya.mll', 'objExport.mll', 'cgfxShader.mll', 'dx11Shader.mll', 'dgProfiler.mll',
-                  'deformerEvaluator.mll', 'nearestPointOnMesh.mll',
+                  'deformerEvaluator.mll', 'nearestPointOnMesh.mll', 'SOuP.mll',
                   'invertShape.mll', 'poseInterpolator.mll', 'projectConfiguration.py']
 
 MAYAToolVariables = {
@@ -58,7 +58,8 @@ MAYAToolVariables = {
                          '{}/Maya/Tools/TRK'.format(basePath),
 
                          ],
-    'MAYA_PLUG_IN_PATH': []
+    'MAYA_PLUG_IN_PATH': [],
+    'MAYA_SHELF_PATH': []
 }
 
 MAYA_BAT_PATH = {"MAYA_MODULE_PATH": ["{}/Maya/modules/MCLShelf/MCLShelf1.0".format(basePath),
