@@ -38,7 +38,7 @@ MAYAMenu = [{'General': {}},
             {'Help': {}}]
 
 MAYAPluginList = ['AbcExport.mll', 'AbcImport.mll', 'matrixNodes.mll', 'gpuCache.mll', 'SHAPESBrush.mll',
-                  'mtoa.mll','pgYetiMaya.mll', 'lookdevKit.mll', 'curveWarp.mll', 'modelingTookit.mll',
+                  'mtoa.mll', 'pgYetiMaya.mll', 'lookdevKit.mll', 'curveWarp.mll', 'modelingTookit.mll',
                   'fbxmaya.mll', 'objExport.mll', 'cgfxShader.mll', 'dx11Shader.mll', 'dgProfiler.mll',
                   'deformerEvaluator.mll', 'nearestPointOnMesh.mll',
                   'invertShape.mll', 'poseInterpolator.mll', 'projectConfiguration.py']
@@ -66,6 +66,7 @@ MAYA_BAT_PATH = {"MAYA_MODULE_PATH": ["{}/Maya/modules/MCLShelf/MCLShelf1.0".for
                                       "{}/Maya/modules/TheSetupMachine/TSM3".format(basePath),
                                       "{}/Maya/modules/MCLRig/MCLRig1.0".format(basePath),
                                       "{}/Maya/modules/retarget".format(basePath),
+                                      "{}/Maya/modules/SOUP/2014/soup".format(basePath),
                                       ],
                  'PYTHONPATH': [scriptTool.getScriptPath(),
                                 '{}/Maya/Python/2.7/Lib/site-packages'.format(basePath),
