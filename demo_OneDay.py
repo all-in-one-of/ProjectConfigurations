@@ -23,12 +23,14 @@ Renderer = 'arnold5.3'
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 MAYA_VERSION = 2018
 MAYAMenu = [{'General': {}},
-            {'Model': [['scene optimize', 'from GNL.Check import openUI;reload(openUI);openUI.show(1, "Model")'],
+            dict(Model=[['scene optimize',
+                         'from GNL.Check import openUI;reload(openUI);openUI.show(1, "Model")'],
 
-                       ]},
+                        ]),
             {'LookDiv': {}},
             {'Rigging': {}},
-            {'CFX': {}},
+            dict(CFX=[['yeti pipeline',
+                       "from CFX.yetiPipeline.scripts import yetiPipeline;reload(yetiPipeline);yetiPipeline.show()"]]),
             {'EFX': {}},
             {'Track': {}},
             {'Layout': {}},
