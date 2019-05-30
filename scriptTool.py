@@ -26,7 +26,7 @@ def getParentClasses(obj):
 def getFile(module, basename=True):
     if not basename:
         return module
-    return os.path.splitext(os.path.basename(module))[0]
+    return os.path.splitext(os.path.basename(module))[0].replace('\\', '/')
 
 
 def getModulesPath(module):
@@ -47,4 +47,4 @@ def getScriptPath():
 
 
 def getDirPath():
-    return os.path.dirname(getScriptPath())
+    return os.path.dirname(getScriptPath()).replace('\\', '/')
