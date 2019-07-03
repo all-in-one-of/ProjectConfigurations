@@ -40,7 +40,7 @@ MAYAMenu = [{'General': {}},
             {'Help': {}}]
 
 MAYAPluginList = ['AbcExport.mll', 'AbcImport.mll', 'matrixNodes.mll', 'gpuCache.mll', 'SHAPESBrush.mll',
-                  'mtoa.mll','pgYetiMaya.mll', 'lookdevKit.mll', 'curveWarp.mll', 'modelingTookit.mll',
+                  'mtoa.mll', 'pgYetiMaya.mll', 'lookdevKit.mll', 'curveWarp.mll', 'modelingTookit.mll',
                   'fbxmaya.mll', 'objExport.mll', 'cgfxShader.mll', 'dx11Shader.mll', 'dgProfiler.mll',
                   'deformerEvaluator.mll', 'nearestPointOnMesh.mll',
                   'invertShape.mll', 'poseInterpolator.mll', 'projectConfiguration.py']
@@ -67,7 +67,8 @@ MAYA_BAT_PATH = {"MAYA_MODULE_PATH": ["{}/Maya/modules/yeti/2018/Yeti3.0.3".form
                                       "{}/Maya/modules/MCLShelf/MCLShelf1.0".format(basePath),
                                       "{}/Maya/modules/mtoadeploy/2018/mtoa3.1.0".format(basePath),
                                       "{}/Maya/modules/SHAPESBrush/2018/SHAPESBrush1.0".format(basePath),
-                                      "{}/Maya/modules/TheSetupMachine/TSM3".format(basePath)
+                                      "{}/Maya/modules/TheSetupMachine/TSM3".format(basePath),
+                                      "{}/Maya/modules/zMappedWrapDeformer".format(basePath),
                                       ],
                  'PYTHONPATH': [scriptTool.getScriptPath(),
                                 '{}/Maya/Python/2.7/Lib/site-packages'.format(basePath),

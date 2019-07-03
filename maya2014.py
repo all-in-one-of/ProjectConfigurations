@@ -68,6 +68,7 @@ MAYA_BAT_PATH = {"MAYA_MODULE_PATH": ["{}/Maya/modules/MCLShelf/MCLShelf1.0".for
                                       "{}/Maya/modules/MCLRig/MCLRig1.0".format(basePath),
                                       "{}/Maya/modules/retarget".format(basePath),
                                       "{}/Maya/modules/SOUP/2014/soup".format(basePath),
+                                      "{}/Maya/modules/zMappedWrapDeformer".format(basePath),
                                       ],
                  'PYTHONPATH': [scriptTool.getScriptPath(),
                                 '{}/Maya/Python/2.7/Lib/site-packages'.format(basePath),
