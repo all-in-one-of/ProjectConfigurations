@@ -69,7 +69,7 @@ MAYA_BAT_PATH = {"MAYA_MODULE_PATH": ["{}/Maya/modules/yeti/2018/Yeti3.0.3".form
                                       "{}/Maya/modules/SHAPESBrush/2018/SHAPESBrush1.0".format(basePath),
                                       "{}/Maya/modules/TheSetupMachine/TSM3".format(basePath),
                                       "{}/Maya/modules/zMappedWrapDeformer".format(basePath),
-                                      "{}/Maya/ngskintools/Contents".format(basePath),
+                                      "{}/Maya/modules/ngskintools/Contents".format(basePath),
                                       ],
                  'PYTHONPATH': [scriptTool.getScriptPath(),
                                 '{}/Maya/Python/2.7/Lib/site-packages'.format(basePath),
