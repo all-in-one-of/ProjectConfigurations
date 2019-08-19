@@ -9,7 +9,7 @@ __author__ = 'ChenLiang.Miao'
 import os
 import re
 import sys
-
+import importlib
 import maya.cmds as cmds
 import maya.mel as mel
 
@@ -22,7 +22,7 @@ class setup(object):
         folder, f = os.path.split(proName)
         self.menuPro = os.path.join(folder, 'mayaConf').replace('\\', '/')
         self.menuF = 'menu_%s' % self.projectName
-        self.project = __import__(self.projectName)  # imp.load_source('project', proName)
+        self.project = importlib.import_module(self.projectName)  # imp.load_source('project', proName)
         self.toolsEnv = self.project.MAYAToolVariables
         self.init_env()
         self.init_plugs()

@@ -8,7 +8,7 @@
 import os
 import scriptTool
 FILENAME = scriptTool.getFile(__file__)
-basePath = scriptTool.getDirPath().replace('\\', '/')
+basePath = scriptTool.getScriptPath().replace('\\', '/')
 
 # FILENAME = "1001_PN_TD"
 # basePath = '//192.168.0.50/Pipeline/ProjectConfigurations/ProjectConfigurations3.5'
