@@ -1,0 +1,11 @@
+shelf_name      = 'Scripts'
+model_name      = ['MOD', 'VHQShelf_modItem.png']
+rig_name        = ['RIG', 'VHQShelf_rigItem.png']
+shader_name     = ['SDR', 'VHQShelf_shaderItem.png']
+track_name      = ['TRK', 'VHQShelf_trackItem.png']
+layout_name     = ['LAY', 'VHQShelf_layoutItem.png']
+anim_name       = ['ANI', 'VHQShelf_animItem.png']
+effect_name     = ['EFX', 'VHQShelf_effectItem.png']
+cfx_name        = ['CFX', 'VHQShelf_CFXItem.png']
+light_name      = ['LGT', 'VHQShelf_lightItem.png']
+env_name        = ['ENV', 'VHQShelf_ENVItem.png']
