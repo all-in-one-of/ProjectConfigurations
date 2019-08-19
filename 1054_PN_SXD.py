@@ -145,7 +145,7 @@ MAYA_BAT_PATH = dict(XBMLANGPATH=['{0}/Maya/icons/{1}'.format(PROJECT_MAYA_PATH,
                      REDSHIFT_LICENSEPATH=[REDSHIFT_CONF['REDSHIFT_LICENSEPATH']])
 
 MAYA_LOCATION =  """
-"C:/Program Files/Autodesk/Maya{0}/bin/maya.exe" -noAutoloadPlugins -command "loadPlugin \\"projectConfiguration.py\\";projectConf -ls all -lp \\"{1}\\";"
+"D:/Program Files/Autodesk/Maya{0}/bin/maya.exe" -noAutoloadPlugins -command "loadPlugin \\"projectConfiguration.py\\";projectConf -ls all -lp \\"{1}\\";"
 """.format(MAYA_VERSION, __file__.replace('\\', '/'))
 
 # nuke --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
