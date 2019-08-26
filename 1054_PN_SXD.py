@@ -49,18 +49,29 @@ HIERO_LOCATION = """
 # houdini ----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 HOUDINI_VERSION = "17.5.173"
 
-HOUDINI_BAT_PATH = dict(HOUDINI_NVIDIA_OPTIX_DSO_PATH=[
-    'C:/Program Files/Side Effects Software/Houdini {0}/NVIDIA_OptiX'.format(HOUDINI_VERSION)],
-                        HOUDINI_OTLSCAN_PATH=['"', '&', os.path.dirname(basePath) + '/Houdini/HDA_Libs/otls']
-                        )
+HOUDINIToolVariables = {
+    'HOUDINI_SCRIPT_PATH': [],
+}
 
-HOUDINI_RENDER_DRIVER = "R:"
 
-HOUDINI_CACHE_DRIVER = "S:"
+HOUDINI_BAT_PATH = {"HOUDINI_COLOR_PICKER_GAMMA": [],
+                    "HOUDINI_UI_ICON_PATH": [],
+                    "HOUDINI_ASSET_STORE_PATH": []
+                    # "HOUDINI_PATH" :
+                    }
 
-HOUDINI_LOCATION = '"C:/Program Files/Side Effects Software/Houdini {0}/bin/houdini.exe" -foreground "{1}/houdiniConf/houdini_project_config.py" {2}/Houdini {3} {4} {5} {6} waitforui "{1}/houdiniConf/SetShelf.py" {4}'.format(
-    HOUDINI_VERSION, basePath, os.path.dirname(basePath), PIPELINE_SOFTWARE, FILENAME, HOUDINI_CACHE_DRIVER,
-    HOUDINI_RENDER_DRIVER)
+# HOUDINI_BAT_PATH = dict(HOUDINI_NVIDIA_OPTIX_DSO_PATH=[
+#     'C:/Program Files/Side Effects Software/Houdini {0}/NVIDIA_OptiX'.format(HOUDINI_VERSION)],
+#                         HOUDINI_OTLSCAN_PATH=['"', '&', os.path.dirname(basePath) + '/Houdini/HDA_Libs/otls']
+#                         )
+#
+# HOUDINI_RENDER_DRIVER = "R:"
+#
+# HOUDINI_CACHE_DRIVER = "S:"
+
+HOUDINI_LOCATION ="""
+C:/Program Files/Side Effects Software/Houdini {0}/bin/houdini.exe" )
+"""
 
 # maya --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 MAYA_VERSION = 2018
