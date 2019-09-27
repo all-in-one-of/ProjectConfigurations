@@ -6,7 +6,6 @@
 __author__ = 'ChenLiang.Miao'
 # import --+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
 import hou
-import tempfile
 import os
 import sys
 import importlib
@@ -24,13 +23,13 @@ class initShelves(object):
 
         self.folder in sys.path or sys.path.insert(0, self.folder)
         self.shelf_project = importlib.import_module(self.shelfName)
+        self.tempDir = os.path.join(os.path.expanduser('~'), 'AppData/Local/Temp').replace('\\', '/')
 
     def run(self):
         try:
             self._initShelves()
         except:
             print('something is error when it create shelf')
-
         finally:
             sys.path.remove(self.folder)
 
@@ -45,8 +44,6 @@ class initShelves(object):
         for each in self.getAllPipelineName():
             houShelves = allShelves.get(each, None)
             houShelves and houShelves.destroy()
-        # rebuild shelves
-
         for each in self.shelf_project.SHELVES_TABLES:
             self.create_shelf(each)
 
@@ -58,17 +55,17 @@ class initShelves(object):
         """
         shelfName = messageDic.get('name')
         shelfLabel = messageDic.get('label')
-        shelfPath = os.path.join(tempfile.gettempdir(), '%s.shelf' % shelfLabel).replace('\\', '/')
+        shelfPath = os.path.join(self.tempDir, '%s.shelf' % shelfLabel).replace('\\', '/')
         shelfNode = hou.shelves.newShelf(shelfPath, shelfName, shelfLabel)
 
         tools = messageDic.get('tools')
-        for (toolName, toolLabel, toolCommand, toolLanguage, toolIcon) in tools:
-            self.create_tools_on_shelf(shelfNode, toolName, toolLabel, toolCommand, toolLanguage, toolIcon)
+        allTools = map(lambda args: self.create_tools_on_shelf(shelfNode.filePath(), *args), tools)
+        shelfNode.setTools(allTools)
 
-    def create_tools_on_shelf(self, shelf, toolName, toolLabel, toolCommand, toolLanguage, toolIcon):
+    def create_tools_on_shelf(self, shelfPath, toolName, toolLabel, toolCommand, toolLanguage, toolIcon):
         """
         自定义工具架上的工具
-        :param shelf:
+        :param shelfPath:
         :param toolName:
         :param toolLabel:
         :param toolCommand:
@@ -77,9 +74,8 @@ class initShelves(object):
         :return:
         """
         toolLanguage = toolKeysEnv.toolsLanguage.get(toolLanguage)
-        selfName = shelf.name()
-        filePath = os.path.join(tempfile.gettempdir(), selfName, '%s.shelf' % toolLabel).replace('\\', '/')
-        shelf.newTool(filePath, toolName, toolLabel, toolCommand, toolLanguage, toolIcon)
+        newTool = hou.shelves.newTool(shelfPath, toolName, toolLabel, toolCommand, toolLanguage, toolIcon)
+        return newTool
 
     def getAllPipelineName(self):
         """

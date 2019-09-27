@@ -9,10 +9,12 @@ __author__ = 'ChenLiang.Miao'
 # function +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
 
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
-shelves_pipelineTools = {'name': 'pipeline', 'label': 'pipiline3.5',
-                         'tools': [('pipelineTools', '1054_PN_SXD', 'script', 0, ' icon'),
-                                   ('name', 'label', 'script', 'language', ' icon'),
-                                   ('name', 'label', 'script', 'language', ' icon')]
+shelves_pipelineTools = {'name': 'pipeline', 'label': '1054_PN_SXD',
+                         'tools': [('pipelineTools', 'pipelineTools', 'from pipelineTools.scripts import openUI\n'
+                                                                      'reload(openUI)\n'
+                                                                      'openUI.show("cgtw", "1054_PN_SXD")', 1,
+                                    'PLASMA_App')
+                                   ]
 
                          }
 

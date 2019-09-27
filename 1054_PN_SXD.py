@@ -47,31 +47,31 @@ HIERO_LOCATION = """
 """.format(HIERO_VERSION, hiero_v)
 
 # houdini ----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
-HOUDINI_VERSION = "17.5.173"
+HOUDINI_VERSION = "17.0.416"
 
-HOUDINIToolVariables = {
-    'HOUDINI_SCRIPT_PATH': [],
-}
+PROJECT_HOUDINI_PATH = os.path.dirname(basePath).replace('\\', '/')
+print(PROJECT_HOUDINI_PATH)
+HOUDINI_BAT_PATH = dict(HOUDINI_NVIDIA_OPTIX_DSO_PATH=[
+    'C:/Program Files/Side Effects Software/Houdini {0}/NVIDIA_OptiX'.format(HOUDINI_VERSION)],
+    HOUDINI_OTLSCAN_PATH=['"', '&', os.path.dirname(basePath) + '/Houdini/HDA_Libs/otls',
+                          '{0}/Houdini/otls/17'.format(PROJECT_HOUDINI_PATH)],
+    PYTHONPATH=['{0}/Houdini/Python/17/Lib/site-packages'.format(PROJECT_HOUDINI_PATH),
+                '{0}/Houdini/Scripts/17'.format(PROJECT_HOUDINI_PATH),
+                '{0}/Houdini/Tools/17'.format(PROJECT_HOUDINI_PATH),
+                '{0}/Houdini/python_Lib2.7'.format(PROJECT_HOUDINI_PATH)
 
+                ],
+)
 
-HOUDINI_BAT_PATH = {"HOUDINI_COLOR_PICKER_GAMMA": [],
-                    "HOUDINI_UI_ICON_PATH": [],
-                    "HOUDINI_ASSET_STORE_PATH": []
-                    # "HOUDINI_PATH" :
-                    }
+HOUDINI_SESSION_PATH = dict(
+    cache_driver='S:',
+    render_driver='R:'
 
-# HOUDINI_BAT_PATH = dict(HOUDINI_NVIDIA_OPTIX_DSO_PATH=[
-#     'C:/Program Files/Side Effects Software/Houdini {0}/NVIDIA_OptiX'.format(HOUDINI_VERSION)],
-#                         HOUDINI_OTLSCAN_PATH=['"', '&', os.path.dirname(basePath) + '/Houdini/HDA_Libs/otls']
-#                         )
-#
-# HOUDINI_RENDER_DRIVER = "R:"
-#
-# HOUDINI_CACHE_DRIVER = "S:"
+)
 
-HOUDINI_LOCATION ="""
-C:/Program Files/Side Effects Software/Houdini {0}/bin/houdini.exe" )
-"""
+HOUDINI_LOCATION = '''
+"D:/Program Files/Side Effects Software/Houdini {0}/bin/houdinifx.exe" -foreground "{1}/houdiniConf/VHQShelf/17/VHQShelf1.0/scripts/startHoudini.py" "{1}/{2}.py"
+'''.format(HOUDINI_VERSION, basePath, FILENAME)
 
 # maya --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 MAYA_VERSION = 2018
@@ -238,5 +238,14 @@ ZBRUSH_LOCATION = """
 """.format(ZBRUSH_VERSION)
 
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
+BLENDER_VERSION = '4R8'
+
+BLENDER_BAT_PATH = {}
+
+BLENDER_LOCATION = """
+"D:/Program Files/Blender Foundation/Blender/blender.exe"
+""".format(BLENDER_VERSION)
+
+
 
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
