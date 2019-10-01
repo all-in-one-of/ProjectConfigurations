@@ -7,7 +7,6 @@
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 import os
 import scriptTool
-
 FILENAME = scriptTool.getFile(__file__)
 basePath = scriptTool.getScriptPath().replace('\\', '/')
 
@@ -46,18 +45,15 @@ HIERO_LOCATION = """
 # houdini ----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 HOUDINI_VERSION = "17.5.173"
 
-HOUDINI_BAT_PATH = dict(HOUDINI_NVIDIA_OPTIX_DSO_PATH=[
-    'C:/Program Files/Side Effects Software/Houdini {0}/NVIDIA_OptiX'.format(HOUDINI_VERSION)],
-                        HOUDINI_OTLSCAN_PATH=['"', '&', os.path.dirname(basePath) + '/Houdini/HDA_Libs/otls']
-                        )
+HOUDINI_BAT_PATH = dict(HOUDINI_NVIDIA_OPTIX_DSO_PATH=['C:/Program Files/Side Effects Software/Houdini {0}/NVIDIA_OptiX'.format(HOUDINI_VERSION)],
+	HOUDINI_OTLSCAN_PATH=['"','&', os.path.dirname(basePath) + '/Houdini/HDA_Libs/otls']
+)
 
 HOUDINI_RENDER_DRIVER = "R:"
 
 HOUDINI_CACHE_DRIVER = "S:"
 
-HOUDINI_LOCATION = '"C:/Program Files/Side Effects Software/Houdini {0}/bin/houdini.exe" -foreground "{1}/houdiniConf/houdini_project_config.py" {2}/Houdini {3} {4} {5} {6} waitforui "{1}/houdiniConf/SetShelf.py" {4}'.format(
-    HOUDINI_VERSION, basePath, os.path.dirname(basePath), PIPELINE_SOFTWARE, FILENAME, HOUDINI_CACHE_DRIVER,
-    HOUDINI_RENDER_DRIVER)
+HOUDINI_LOCATION = '"C:/Program Files/Side Effects Software/Houdini {0}/bin/houdini.exe" -foreground "{1}/houdiniConf/houdini_project_config.py" {2}/Houdini {3} {4} {5} {6} waitforui "{1}/houdiniConf/SetShelf.py" {4}'.format(HOUDINI_VERSION, basePath, os.path.dirname(basePath), PIPELINE_SOFTWARE, FILENAME, HOUDINI_CACHE_DRIVER, HOUDINI_RENDER_DRIVER)
 
 # maya --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 MAYA_VERSION = 2017
@@ -118,21 +114,15 @@ MAYA_BAT_PATH = dict(XBMLANGPATH=['{0}/Maya/icons/{1}'.format(PROJECT_MAYA_PATH,
                      MAYA_UI_LANGUAGE='en_US',
                      MAYA_MODULE_PATH=["{0}/mayaConf/VHQShelf/{1}/VHQShelf1.0".format(basePath, MAYA_VERSION),
                                        "{0}/Maya/modules/Yeti/{1}/Yeti2.2.5".format(PROJECT_MAYA_PATH, MAYA_VERSION),
-                                       "{0}/Maya/modules/Miarmy/{1}/Miarmy6.7.11".format(PROJECT_MAYA_PATH,
-                                                                                         MAYA_VERSION),
+                                       "{0}/Maya/modules/Miarmy/{1}/Miarmy6.7.11".format(PROJECT_MAYA_PATH, MAYA_VERSION),
                                        "{0}/Maya/modules/SoftClusterEX/{1}/SoftClusterEX1.0".format(
                                            PROJECT_MAYA_PATH, MAYA_VERSION),
                                        "{0}/Maya/modules/mtoa/{1}/mtoa2.1.0".format(PROJECT_MAYA_PATH, MAYA_VERSION),
-                                       "{0}/Maya/modules/SHAPESBrush/{1}/SHAPESBrush1.0".format(PROJECT_MAYA_PATH,
-                                                                                                MAYA_VERSION),
-                                       "{0}/Maya/modules/TheSetupMachine/{1}/TSM3".format(PROJECT_MAYA_PATH,
-                                                                                          MAYA_VERSION),
-                                       "{0}/Maya/modules/Qualoth/{1}/Qualoth4.2.8".format(PROJECT_MAYA_PATH,
-                                                                                          MAYA_VERSION),
-                                       "{0}/Maya/modules/realflow/{1}/reaflow6.0.1.1".format(PROJECT_MAYA_PATH,
-                                                                                             MAYA_VERSION),
-                                       "{0}/Maya/modules/hardmesh/{1}/hardmesh_2.2.1".format(PROJECT_MAYA_PATH,
-                                                                                             MAYA_VERSION),
+                                       "{0}/Maya/modules/SHAPESBrush/{1}/SHAPESBrush1.0".format(PROJECT_MAYA_PATH, MAYA_VERSION),
+                                       "{0}/Maya/modules/TheSetupMachine/{1}/TSM3".format(PROJECT_MAYA_PATH, MAYA_VERSION),
+                                       "{0}/Maya/modules/Qualoth/{1}/Qualoth4.2.8".format(PROJECT_MAYA_PATH, MAYA_VERSION),
+                                       "{0}/Maya/modules/realflow/{1}/reaflow6.0.1.1".format(PROJECT_MAYA_PATH, MAYA_VERSION),
+                                       "{0}/Maya/modules/hardmesh/{1}/hardmesh_2.2.1".format(PROJECT_MAYA_PATH, MAYA_VERSION),
                                        "{0}/Maya/modules/Ziva/{1}/ZivaVFX1.6".format(PROJECT_MAYA_PATH, MAYA_VERSION),
                                        "{0}/Maya/modules/UVLayout/{1}/UVLayout".format(PROJECT_MAYA_PATH, MAYA_VERSION),
                                        "{0}/Maya/modules/SOuP/{1}/soup".format(PROJECT_MAYA_PATH, MAYA_VERSION),
@@ -147,11 +137,10 @@ MAYA_BAT_PATH = dict(XBMLANGPATH=['{0}/Maya/icons/{1}'.format(PROJECT_MAYA_PATH,
                                  REDSHIFT_CONF['REDSHIFT_SCRIPT_PATH']
 
                                  ],
-                     MAYA_SHELF_PATH=[
-                         "{0}/Maya/modules/UVLayout/{1}/UVLayout/shelves".format(PROJECT_MAYA_PATH, MAYA_VERSION),
-                         "{0}/Maya/modules/SOuP/{1}/soup/shelves".format(PROJECT_MAYA_PATH, MAYA_VERSION),
-                         # "C:/Program Files/RedPack/maya/MayaPreferences/2017/prefs/shelves"],
-                         ],
+                     MAYA_SHELF_PATH=["{0}/Maya/modules/UVLayout/{1}/UVLayout/shelves".format(PROJECT_MAYA_PATH, MAYA_VERSION),
+                                      "{0}/Maya/modules/SOuP/{1}/soup/shelves".format(PROJECT_MAYA_PATH, MAYA_VERSION),
+                                      # "C:/Program Files/RedPack/maya/MayaPreferences/2017/prefs/shelves"],
+                                      ],
                      PATH=['{}/bin'.format(REDSHIFT_CONF['REDSHIFT_COREDATAPATH'])],
                      MAYA_SCRIPT_PATH=[REDSHIFT_CONF['REDSHIFT_SCRIPT_PATH']],
                      MAYA_PLUG_IN_PATH=[REDSHIFT_CONF['REDSHIFT_PLUG_IN_PATH']],
@@ -162,9 +151,11 @@ MAYA_BAT_PATH = dict(XBMLANGPATH=['{0}/Maya/icons/{1}'.format(PROJECT_MAYA_PATH,
                          PROJECT_MAYA_PATH, MAYA_VERSION)],
                      REDSHIFT_LICENSEPATH=[REDSHIFT_CONF['REDSHIFT_LICENSEPATH']])
 
-MAYA_LOCATION = """
+MAYA_LOCATION =  """
 "D:/Program Files/Autodesk/Maya{0}/bin/maya.exe" -noAutoloadPlugins -command "loadPlugin \\"projectConfiguration.py\\";projectConf -ls all -lp \\"{1}\\";"
 """.format(MAYA_VERSION, __file__.replace('\\', '/'))
+
+
 
 # nuke --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 NUKE_VERSION = '10.5'
@@ -179,6 +170,7 @@ NUKE_BAT_PATH = {
 }
 
 NUKE_LOCATION = '"C:/Program Files/Nuke{0}v2/Nuke{0}.exe" --nukex "{1}" "{2}"'.format(NUKE_VERSION, '', FILENAME)
+
 
 # photoshop --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
 PHOTOSHOP_VERSION = 'CC 2015'

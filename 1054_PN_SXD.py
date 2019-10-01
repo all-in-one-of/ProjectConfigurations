@@ -138,6 +138,7 @@ MAYA_BAT_PATH = dict(XBMLANGPATH=['{0}/Maya/icons/{1}'.format(PROJECT_MAYA_PATH,
                                        "{0}/Maya/modules/Miarmy/{1}/Miarmy7.0.12".format(PROJECT_MAYA_PATH,
                                                                                          MAYA_VERSION),
                                        "{}/Maya/modules/ngskintools/Contents".format(PROJECT_MAYA_PATH),
+                                       
 
                                        ],
                      PYTHONPATH=[os.path.dirname(__file__).replace('\\', '/'),

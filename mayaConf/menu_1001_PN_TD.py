@@ -27,15 +27,15 @@ def close_parent_process():
 # functions -+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
 def initMenu():
     # - Load User hotkeys
-    try:
-        cmds.hotkeySet(getpass.getuser(), e=True, cu=True)
-
-    except RuntimeError:
-        cmds.hotkeySet(getpass.getuser(), src='Maya_Default')
-        cmds.hotkeySet(getpass.getuser(), e=True, cu=True)
-
-    except:
-        pass
+    # try:
+    #     cmds.hotkeySet(getpass.getuser(), e=True, cu=True)
+    #
+    # except RuntimeError:
+    #     cmds.hotkeySet(getpass.getuser(), src='Maya_Default')
+    #     cmds.hotkeySet(getpass.getuser(), e=True, cu=True)
+    #
+    # except:
+    #     pass
 
     # - maya main window
     mayaWin = mel.eval("global string $gMainWindow;$temp= $gMainWindow;")
