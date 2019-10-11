@@ -40,5 +40,8 @@ class addItem(__init__.add_item):
         cmds.menuItem(l='SoftClusterEX', p=self.popupMenu,
                       c="import SoftClusterEX;reload(SoftClusterEX);SoftClusterEX.launch()")
 
+        cmds.menuItem(l='transSkin', p=self.popupMenu,
+                      c="from RIG.scripts import transSkin;reload(transSkin);transSkin.show()")
+
         cmds.menuItem(l='help', i='cloud_download.png', c='print "This is rig tools"', p=self.popupMenu)
         cmds.setParent('..', m=True)
